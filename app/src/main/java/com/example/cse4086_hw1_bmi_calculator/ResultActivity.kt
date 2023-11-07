@@ -13,9 +13,9 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val bmiResult = intent.getStringExtra("BMI_RESULT")
-        val bmi = intent.getStringExtra("BMI")
+        val interpret = intent.getStringExtra("BMI")
 
         val resultTextView: TextView = findViewById(R.id.result)
-        resultTextView.text = " Body Mass Index: $bmiResult\n $bmi"
+        resultTextView.text = " Body Mass Index: $bmiResult\n $interpret"
     }
 }

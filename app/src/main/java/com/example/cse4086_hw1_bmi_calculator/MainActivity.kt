@@ -29,10 +29,12 @@ class MainActivity : AppCompatActivity() {
 
                 val bmi = calculateBMI(weight, height)
                 val result = String.format("%.1f", bmi)
+                val interpret = interpretBMI(bmi)
 
                 val intent = Intent(this@MainActivity, ResultActivity::class.java)
                 intent.putExtra("BMI_RESULT", result)
-                intent.putExtra("BMI", bmi)
+                intent.putExtra("BMI", interpret)
+
                 startActivity(intent)
             } else {
                 // Kullanıcı boş alan bıraktıysa hata mesajını göster
@@ -44,5 +46,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateBMI(weight: Float, height: Float): Float {
         return weight / (height * height)
+    }
+    private fun interpretBMI(bmi: Float): String {
+        return when {
+            bmi < 18.5 -> "Zayıf"
+            bmi < 24.9 -> "Normal"
+            bmi < 29.9 -> "Fazla Kilolu"
+            else -> "Obez"
+        }
     }
 }
