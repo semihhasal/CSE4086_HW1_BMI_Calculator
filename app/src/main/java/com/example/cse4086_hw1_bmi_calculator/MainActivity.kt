@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
             if (weightStr.isNotEmpty() && heightStr.isNotEmpty()) {
                 val weight = weightStr.toFloat()
-                val height = heightStr.toFloat() / 100 // CM olarak gelen boyu metre cinsine çeviriyoruz
+                val height = heightStr.toFloat()
 
                 val bmi = calculateBMI(weight, height)
                 val result = String.format("%.1f", bmi)
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
                 startActivity(intent)
             } else {
-                // Kullanıcı boş alan bıraktıysa hata mesajını göster
+
                 weightInputLayout.error = "please enter weight."
                 heightInputLayout.error = "please enter height"
             }
