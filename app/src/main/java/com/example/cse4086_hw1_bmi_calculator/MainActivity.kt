@@ -49,10 +49,10 @@ class MainActivity : AppCompatActivity() {
     }
     private fun interpretBMI(bmi: Float): String {
         return when {
-            bmi < 18.5 -> "Zayıf"
+            bmi < 18.5 -> "Underweight"
             bmi < 24.9 -> "Normal"
-            bmi < 29.9 -> "Fazla Kilolu"
-            else -> "Obez"
+            bmi < 29.9 -> "Overweight"
+            else -> "Obese"
         }
     }
 }

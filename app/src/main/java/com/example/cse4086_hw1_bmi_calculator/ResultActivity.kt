@@ -23,10 +23,9 @@ class ResultActivity : AppCompatActivity() {
 
         val backButton: Button = findViewById(R.id.backButton)
         backButton.setOnClickListener {
-            // MainActivity'ye geri dönmek için Intent oluştur
             val intent = Intent(this@ResultActivity, MainActivity::class.java)
             startActivity(intent)
-            finish() // ResultActivity'yi kapat
+            finish()
         }
     }
 }
